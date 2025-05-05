@@ -1,0 +1,14 @@
+[filtering-for]
+other = "Memfilter untuk"
+
+[no-posts]
+other = "Belum ada postingan"
+
+[skip-link]
+other = "Langsung ke konten utama"
+
+[tags]
+other = "Tag"
+
+[writing]
+other = "Tulisan"
