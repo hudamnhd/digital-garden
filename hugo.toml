@@ -3,6 +3,18 @@ copyright = "Huda (CC BY 4.0)"
 defaultContentLanguage = "id"
 theme = "typography"
 
+# Setup syntax highlighting without inline styles. For more information about
+# why you'd want to avoid inline styles, see
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src#unsafe_inline_styles
+[markup]
+  [markup.highlight]
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [related]
   threshold = 80
   includeNewer = true
