@@ -1,2 +1,35 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<a class="skip-link" href="#main-content">{{ i18n "skip-link" }}</a>
+
+<div class="menu-header">
+  <a href="{{ relURL .Site.Home.RelPermalink }}" class="title">
+    <h1>{{ .Site.Title }}
+    </h1>
+  </a>
+  <nav>
+    {{ range .Site.Menus.main.ByWeight }}
+      <a href="{{ .URL }}"
+         class="{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}active{{ end }}">
+        {{ .Name }}
+      </a>
+    {{ end }}
+    <!-- <a href='{{ absURL "index.xml" }}'>RSS</a> -->
+
+    <!-- Convert this page's translations into a dict -->
+    <!-- {{ $translations := dict }} -->
+    {{ range .Translations }}
+      {{ $translations = merge $translations (dict .Language.Lang .) }}
+    {{ end }}
+
+    <!-- Create a link to every translation -->
+    {{ range where .Site.Languages "Lang" "!=" .Page.Lang }}
+      {{ with (index $translations .Lang) }}
+        <!-- <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a> -->
+      {{ else }}
+        <!-- The complicated setup was necessary to make a grayed out link -->
+        {{ if not .Params.hideUntranslated }}
+          <!-- <a class="disabled" role="link" aria-disabled="true">{{ .LanguageName }}</a> -->
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </nav>
+</div>
