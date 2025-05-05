@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 copyright = "Huda (CC BY 4.0)"
-languageCode = 'id-ID'
+defaultContentLanguage = "id"
 title = 'Huda'
 theme = "typography"
 
