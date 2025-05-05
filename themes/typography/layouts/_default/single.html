@@ -1,0 +1,65 @@
+{{ define "main" }}
+{{ if not .Params.menu }}
+<h1 class="title">{{ .Title }}</h1>
+<p class="byline">
+  <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+    {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+  </time>
+    {{ if .Param "readTime" }}
+    &nbsp; · &nbsp;
+    {{ .ReadingTime }} min read
+    {{end }}
+</p>
+{{ end }}
+
+  {{/* Table of Content */}}
+
+  {{ if .Param "toc" }}
+  <details class="toc-details" open="">
+    <summary>
+    <strong>Table of contents</strong>
+    </summary>
+    <div class="inner">
+    {{ .TableOfContents }}
+    </div>
+  </details>
+  {{ end }}
+
+<div {{ if .Param "autonumber" }} class="autonumber" {{ end }}>
+  <content>
+    {{ .Content }}
+  </content>
+</div>
+
+{{ if .Param "showTags" }}
+  <div class="blog-tags">
+    <span><strong>Tags</strong>:</span>
+    {{ range (.GetTerms "tags") }}
+      <a href="{{ .RelPermalink }}">#{{ lower .LinkTitle }}</a>
+    {{ end }}
+  </div>
+{{ end }}
+
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ if $related }}
+  <div class="related-posts">
+    <h2 id="related-posts">Postingan Terkait</h2>
+    <ul>
+      {{ range $related }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
+
+<div class="post-footer-actions">
+  <a href="/blog" class="back-to-top">↩ Back to Blog</a>
+  {{ if not (.Param "hideBackToTop") }}
+    <a href="#top" class="back-to-top">
+       Back to Top ⤴
+    </a>
+  {{ end }}
+</div>
+{{ end }}

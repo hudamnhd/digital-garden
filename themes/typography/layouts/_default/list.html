@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+{{ if not .Data.Singular }}
+<h2 class="title">{{ i18n "tags" }}</h2>
+  <div class="blog-tags">
+    {{ range .Site.Taxonomies.tags }}
+      <a href="{{ .Page.RelPermalink }}">#{{ lower .Page.Title }}</a>
+    {{ end }}
+  </div>
+{{ end }}
+<h2 clasws="title">{{ .Title }}</h2>
+<content>
+
+  {{ if .Data.Singular }}
+    <h3 class="blog-filter">{{ i18n "filtering-for" }} "{{ .Title }}"</h3>
+  {{ end }}
+
+
+  <ul class="blog-posts">
+    {{ range .Pages }}
+    <li>
+      <span>
+          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+            {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+          </time>
+      </span>
+      {{ if .Params.link }}
+        <a href="{{ .Params.link }}" target="_blank">{{ .Title }} ↪</a>
+      {{ else }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+    </li>
+    {{ else }}
+    <li>
+      {{ i18n "no-posts" }}
+    </li>
+    {{ end }}
+  </ul>
+
+  {{ if .Data.Singular }}
+    <a href="/blog" class="back-to-top">↩ Back to Blog</a>
+  {{ end }}
+</content>
+{{ end }}

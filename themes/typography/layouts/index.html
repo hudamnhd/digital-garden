@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{ .Content }}
+  <h2 class="recent-post">{{ i18n "writing" }}</h2>
+  <ul>
+    {{ $posts := where .Site.RegularPages "Section" "blog" }}
+      {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+  </ul>
+{{ end }}
