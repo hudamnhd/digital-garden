@@ -1,6 +1,7 @@
 ---
-title: 'Example Markdown content'
-date: 2023-01-15T09:00:00-07:00
+author: "Hugo Authors"
+title: "Markdown Syntax Guide"
+date: "2019-03-11"
 draft: false
 tags: ['sample']
 ---

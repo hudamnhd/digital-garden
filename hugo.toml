@@ -14,3 +14,18 @@ theme = "typography"
     contentDir = "content"
     [languages.id.params]
       madeWith = "Powered by [Hugo](https://gohugo.io/)"
+[params]
+  hideUntranslated = false
+  favicon = "images/favicon.png"
+  title = "Huda digital garden"
+  description = "My digital garden website"
+  images = ["images/share.webp"]
+  dateFormat = "02 Jan 2006"
+  generateSocialCard = true
+
+  [params.social]
+    twitter = "hudamnhd" # Twitter handle (without '@')
+
+  [params.author]
+    name = "Huda" # Your name as shown in the RSS feed metadata
+    email = "muhamadhuda519@gmail,c@example.com" # Added to the footer so readers can reply to posts

@@ -1,5 +1,6 @@
 <!-- Dynamic social card generation -->
-{{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/firamono/FiraMono-Bold.ttf" }}
+<!-- {{ $font := resources.GetRemote "https://github.com/google/fonts/raw/main/ofl/firamono/FiraMono-Bold.ttf" }} -->
+{{ $font := resources.Get "fonts/AtkinsonHyperlegibleMono-Bold.otf" }}
 {{ $fg := resources.Get "images/social_card_fg.png"}}
 {{ $bg := resources.Get "images/social_card_bg.png"}}
 
@@ -7,8 +8,8 @@
   {{ $fg = $fg.Filter (images.Text .Title (dict
     "font" $font
     "color" "#fafafa"
-    "size" 95
-    "linespacing" 16
+    "size" 90
+    "linespacing" 13
     "x" 0
     "y" 0
   )) }}
@@ -17,7 +18,7 @@
     "font" $font
     "color" "#fafafa"
     "size" 130
-    "linespacing" 20
+    "linespacing" 13
     "x" 0
     "y" 0
   )) }}
@@ -31,7 +32,7 @@
     "font" $font
     "color" "#898a8d"
     "size" 60
-    "linespacing" 30
+    "linespacing" 15
     "x" 0
     "y" 425
 )) }}
