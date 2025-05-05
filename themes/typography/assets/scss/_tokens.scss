@@ -1,3 +1,11 @@
+$breakpoints: (
+  sm: 42rem,
+  md: 48rem,
+  lg: 64rem,
+  xl: 80rem,
+  2xl: 96rem
+);
+
 :root {
   --spacing: 0.25rem;
   --font-sans:
@@ -43,4 +51,96 @@
     --primary-border: oklch(37% 0.013 285.805);
     --kbd-shadow: oklch(96.7% 0.001 286.375 / 10%);
   }
+}
+
+@mixin responsive-type($base, $line, $md, $line-md, $xl, $line-xl) {
+  font-size: $base;
+  line-height: $line;
+
+  @media (min-width: map-get($breakpoints, md)) {
+    font-size: $md;
+    line-height: $line-md;
+  }
+  @media (min-width: map-get($breakpoints, xl)) {
+    font-size: $xl;
+    line-height: $line-xl;
+  }
+}
+
+@mixin responsive-margin-y(
+  $base-top,
+  $base-bottom,
+  $md-top,
+  $md-bottom,
+  $xl-top,
+  $xl-bottom
+) {
+  margin-top: $base-top;
+  margin-bottom: $bottom;
+
+  @media (min-width: map-get($breakpoints, md)) {
+    margin-top: $base-top;
+    margin-bottom: $bottom;
+  }
+  @media (min-width: map-get($breakpoints, xl)) {
+    margin-top: $base-top;
+    margin-bottom: $bottom;
+  }
+}
+
+@mixin container-ch($sm, $md, $lg) {
+  @media (min-width: map-get($breakpoints, sm)) {
+    max-width: $sm;
+    width: 100%;
+    margin-inline: auto;
+  }
+  @media (min-width: map-get($breakpoints, md)) {
+    max-width: $md;
+    width: 100%;
+    margin-inline: auto;
+  }
+  @media (min-width: map-get($breakpoints, lg)) {
+    max-width: $lg;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+@mixin visited-link-style {
+  color: var(--link-foreground-visited);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@mixin normal-link-style {
+  color: var(--link-foreground);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@mixin base-link-style {
+  color: var(--primary-foreground);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@mixin hover-visited-link-style {
+  text-decoration: underline;
+  text-decoration-color: var(--link-foreground-visited);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+@mixin hover-normal-link-style {
+  text-underline-offset: 4px;
+  text-decoration: underline;
+  text-decoration-color: var(--link-foreground);
+  text-decoration-thickness: 2px;
+}
+
+@mixin hover-base-link-style {
+  text-underline-offset: 4px;
+  text-decoration: underline;
+  text-decoration-color: var(--primary-foreground);
+  text-decoration-thickness: 2px;
 }

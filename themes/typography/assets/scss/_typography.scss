@@ -1,0 +1,330 @@
+html {
+  @include responsive-type(1.125rem, 1.4, 1.25rem, 1.45, 1.5rem, 1.5);
+  background-color: var(--primary-background);
+  color: var(--secondary-foreground);
+}
+
+.container > * {
+  @include container-ch(57ch, 56ch, 55ch);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  color: var(--primary-foreground);
+  font-weight: 700;
+}
+
+h1 {
+  letter-spacing: -0.05em;
+  margin-top: 0;
+  margin-bottom: 0.888889em;
+  @include responsive-type(2.66em, 1, 2.8em, 1, 2.6em, 1);
+}
+
+h2 {
+  margin-top: 1.5em;
+  margin-bottom: 0.833333em;
+  @include responsive-type(2em, 1.08, 1.8em, 1.1, 1.6em, 1.3);
+}
+
+h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.666667em;
+  @include responsive-type(1.5em, 1.2, 1.5em, 1.2, 1.33em, 1.4);
+}
+
+h4 {
+  margin-top: 1.5em;
+  margin-bottom: 0.666667em;
+}
+
+hr {
+  border-color: var(--primary-border);
+  border-top-width: 1px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+main > h2:first-child,
+hr + *,
+h1 + *,
+h2 + *,
+h3 + *,
+h4 + * {
+  margin-top: 0 !important;
+}
+
+a {
+  @include normal-link-style;
+}
+
+a:has(code) {
+  @include base-link-style;
+}
+
+a:hover {
+  @include hover-normal-link-style;
+}
+
+figure {
+  margin-inline-start: 0em;
+  margin-inline-end: 0em;
+}
+
+figcaption > p {
+  margin-block-start: 0px;
+  text-align: center;
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+[class~="lead"] {
+  color: var(--muted-foreground);
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.25em;
+}
+
+li {
+  margin-top: 0.25em;
+  margin-top: 0.25em;
+}
+
+ol {
+  list-style-type: decimal;
+
+  li::marker {
+    color: var(--secondary-foreground);
+  }
+}
+
+ul,
+ol {
+  padding-inline-start: calc(var(--spacing) * 6);
+}
+
+ul {
+  list-style-type: disc;
+
+  li::marker {
+    color: var(--muted-foreground);
+  }
+}
+
+ul li:last-child,
+ol li:last-child {
+  margin-bottom: 1em;
+}
+
+ul li:first-child,
+ol li:first-child {
+  margin-top: 0.5em;
+}
+
+li > ul li:first-child,
+li > ol li:first-child {
+  margin-top: 0.25;
+}
+
+li > ul li:last-child,
+li > ol li:last-child {
+  margin-bottom: 0.5em;
+}
+
+ul > li > p:last-child,
+ol > li > p:last-child {
+  margin-bottom: 1.25em;
+}
+
+p + ul,
+p + ol {
+  margin-top: 0.25em !important;
+}
+
+p:has(+ ul) {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 40rem) {
+  ul,
+  ol {
+    padding-inline-start: calc(var(--spacing) * 8);
+  }
+}
+
+dt {
+  margin-top: 1.25em;
+  font-weight: 600;
+}
+
+dl {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+dd {
+  margin-top: 0.5em;
+  padding-inline-start: 1.625em;
+}
+
+.table-outer {
+  overflow-x: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+table {
+  table-layout: auto;
+  min-width: 100%;
+  font-size: 0.875em;
+  line-height: 1.71429;
+  border-collapse: collapse;
+}
+
+thead {
+  border-bottom: 1px solid var(--primary-foreground);
+}
+
+thead th {
+  color: var(--primary-foreground);
+  white-space: nowrap;
+  vertical-align: bottom;
+  padding-inline-end: 0.571429em;
+  padding-bottom: 0.571429em;
+  padding-inline-start: 0.571429em;
+  font-weight: 600;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--primary-border);
+}
+
+tbody tr:last-child {
+  border-bottom-width: 0;
+}
+
+tbody td,
+tfoot td {
+  white-space: nowrap;
+  padding: 0.571429em;
+}
+
+tfoot {
+  border-top-width: 1px;
+  border-top-color: var(--primary-border);
+}
+
+tfoot td {
+  vertical-align: top;
+}
+
+th,
+td {
+  text-align: start;
+}
+
+tbody td {
+  vertical-align: baseline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code:not(pre > code) {
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: var(--secondary-foreground);
+  font-family: var(--font-mono);
+  background-color: var(--secondary-background);
+}
+
+.highlight > pre {
+  border-radius: 6px;
+}
+
+pre code {
+  display: block;
+  font-family: var(--font-mono);
+  color: oklch(13% 0.028 261.692);
+  padding: calc(var(--spacing) * 2.5);
+  white-space: pre-wrap;
+  font-size: 0.85em;
+  overflow-x: auto;
+  text-wrap: nowrap;
+}
+
+figcaption {
+  color: var(--muted-foreground);
+  margin-top: 0.857143em;
+  font-size: 0.875em;
+  line-height: 1.42857;
+}
+
+kbd {
+  color: var(--primary-foreground);
+  box-shadow: 0 0 0 1px var(--kbd-shadow), 0 3px var(--kbd-shadow);
+  padding-top: 0.1875em;
+  padding-inline-end: 0.375em;
+  padding-bottom: 0.1875em;
+  border-radius: 0.3125rem;
+  padding-inline-start: 0.375em;
+  font-family: inherit;
+  font-size: 0.875em;
+  font-weight: 500; /* 500 Atkinson only support 400 & 700 */
+}
+
+blockquote {
+  border-left: 0.25rem solid var(--primary-border);
+  color: var(--primary-foreground);
+  margin: auto;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-inline-start: 1em;
+  font-style: normal;
+}
+
+/* Autonumbering */
+.autonumber {
+  counter-reset: h2-counter 0;
+}
+
+.autonumber h2 {
+  counter-increment: h2-counter 1;
+  counter-reset: h3-counter 0;
+}
+
+.autonumber h3 {
+  counter-increment: h3-counter 1;
+  counter-reset: h4-counter 0;
+}
+
+.autonumber h4 {
+  counter-increment: h4-counter 1;
+}
+
+.autonumber h2:before {
+  content: counter(h2-counter) ".";
+}
+
+.autonumber h3:before {
+  content: counter(h2-counter) "." counter(h3-counter) ".";
+}
+
+.autonumber h4:before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter)
+    ".";
+}
