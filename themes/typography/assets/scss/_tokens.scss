@@ -1,0 +1,46 @@
+:root {
+  --spacing: 0.25rem;
+  --font-sans:
+    "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-mono:
+    "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+
+  color-scheme: light dark;
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --link-foreground: #0069c2;
+    --link-foreground-visited: #551a8b;
+    --primary-background: oklch(1 0 0);
+    --primary-foreground: oklch(21% 0.006 285.885);
+    --secondary-background: oklch(92% 0.004 286.32);
+    --muted-background: oklch(96.7% 0.001 286.375);
+    --muted-foreground-50: oklch(96.7% 0.001 286.375 / 0.5);
+    --muted-foreground: oklch(55.2% 0.016 285.938);
+    --secondary-foreground: oklch(37% 0.013 285.805);
+    --primary-border: oklch(92% 0.004 286.32);
+    --kbd-shadow: oklch(21% 0.006 285.885 / 10%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --link-foreground: #8cb4ff;
+    --link-foreground-visited: #ffadff;
+    --primary-background: oklch(21% 0.006 285.885);
+    --primary-foreground: oklch(96.7% 0.001 286.375);
+    --muted-background: oklch(27.4% 0.006 286.033);
+    --muted-foreground-50: oklch(27.4% 0.006 286.033 / 0.5);
+    --secondary-background: oklch(37% 0.013 285.805);
+    --muted-foreground: oklch(70.5% 0.015 286.067);
+    --secondary-foreground: oklch(87.1% 0.006 286.286);
+    --primary-border: oklch(37% 0.013 285.805);
+    --kbd-shadow: oklch(96.7% 0.001 286.375 / 10%);
+  }
+}

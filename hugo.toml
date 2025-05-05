@@ -1,8 +1,16 @@
 baseURL = 'https://example.org/'
 copyright = "Huda (CC BY 4.0)"
 defaultContentLanguage = "id"
-title = 'Huda'
 theme = "typography"
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = true
+
+[[related.indices]]
+  name = "tags"
+  weight = 100
 
 # Multilingual mode config. More for information about how to setup translation,
 # see https://gohugo.io/content-management/multilingual/
@@ -15,10 +23,10 @@ theme = "typography"
     [languages.id.params]
       madeWith = "Powered by [Hugo](https://gohugo.io/)"
 [params]
-  hideUntranslated = false
-  favicon = "images/favicon.png"
   title = "Huda digital garden"
   description = "My digital garden website"
+  hideUntranslated = false
+  favicon = "images/favicon.png"
   images = ["images/share.webp"]
   dateFormat = "02 Jan 2006"
   generateSocialCard = true
@@ -27,5 +35,5 @@ theme = "typography"
     twitter = "hudamnhd" # Twitter handle (without '@')
 
   [params.author]
-    name = "Huda" # Your name as shown in the RSS feed metadata
-    email = "muhamadhuda519@gmail,c@example.com" # Added to the footer so readers can reply to posts
+    name = "Huda"
+    email = "muhamadhuda519@gmail,c@example.com"
