@@ -1,5 +1,10 @@
-.toc-details > nav > ul {
-  list-style-type: decimal;
+#TableOfContents > ul {
+  list-style-type: decimal !important;
+  margin-top: 0.5em !important;
+}
+
+#TableOfContents a {
+  font-weight: 400;
 }
 
 .toc-details {
@@ -138,6 +143,7 @@ a.blog-reply {
 }
 
 p.byline {
+  font-size: 0.9em;
   opacity: 80%;
 }
 

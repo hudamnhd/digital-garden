@@ -15,10 +15,6 @@ body {
   flex-direction: column;
   min-height: 100%;
 
-  @media (min-width: 64rem) {
-    max-width: 48rem;
-    margin-inline: auto;
-  }
 }
 
 .container > main {

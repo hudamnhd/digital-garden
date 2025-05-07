@@ -9,16 +9,17 @@ $breakpoints: (
 :root {
   --spacing: 0.25rem;
   --font-sans:
-    "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, sans-serif,
+    "Roboto Slab", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
   --font-mono:
-    "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
 
   color-scheme: light dark;
   font-family: var(--font-sans);
   font-weight: 400;
+  font-optical-sizing: auto;
 }
 
 @media (prefers-color-scheme: light) {

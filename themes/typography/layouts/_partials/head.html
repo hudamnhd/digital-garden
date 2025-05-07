@@ -7,8 +7,12 @@
 {{- partial "seo_tags.html" . -}}
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
-{{ $fonts := resources.Get "fonts.css" | minify }}
-<link href="{{ $fonts.RelPermalink }}" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+<!-- {{ $fonts := resources.Get "fonts.css" | minify }} -->
+<!-- <link href="{{ $fonts.RelPermalink }}" rel="stylesheet"> -->
 
 {{ $scss := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $scss.RelPermalink }}" integrity="{{ $scss.Data.Integrity }}">
