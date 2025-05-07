@@ -53,17 +53,13 @@ $breakpoints: (
   }
 }
 
-@mixin responsive-type($base, $line, $md, $line-md, $xl, $line-xl) {
+@mixin responsive-type($base, $line, $md, $line-md) {
   font-size: $base;
   line-height: $line;
 
-  @media (min-width: map-get($breakpoints, md)) {
+  @media (min-width: map-get($breakpoints, sm)) {
     font-size: $md;
     line-height: $line-md;
-  }
-  @media (min-width: map-get($breakpoints, xl)) {
-    font-size: $xl;
-    line-height: $line-xl;
   }
 }
 
@@ -85,24 +81,6 @@ $breakpoints: (
   @media (min-width: map-get($breakpoints, xl)) {
     margin-top: $base-top;
     margin-bottom: $bottom;
-  }
-}
-
-@mixin container-ch($sm, $md, $lg) {
-  @media (min-width: map-get($breakpoints, sm)) {
-    max-width: $sm;
-    width: 100%;
-    margin-inline: auto;
-  }
-  @media (min-width: map-get($breakpoints, md)) {
-    max-width: $md;
-    width: 100%;
-    margin-inline: auto;
-  }
-  @media (min-width: map-get($breakpoints, lg)) {
-    max-width: $lg;
-    width: 100%;
-    margin-inline: auto;
   }
 }
 

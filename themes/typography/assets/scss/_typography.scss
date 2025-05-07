@@ -1,11 +1,13 @@
 html {
-  @include responsive-type(1.125rem, 1.4, 1.25rem, 1.45, 1.5rem, 1.5);
+  @include responsive-type(1.125rem, 1.4, 1.25rem, 1.45);
   background-color: var(--primary-background);
   color: var(--secondary-foreground);
 }
 
 .container > * {
-  @include container-ch(57ch, 56ch, 55ch);
+    max-width: 55ch;
+    width: 100%;
+    margin-inline: auto;
 }
 
 h1,
@@ -23,25 +25,26 @@ b {
 h1 {
   letter-spacing: -0.05em;
   margin-top: 0;
-  margin-bottom: 0.888889em;
-  @include responsive-type(2.66em, 1, 2.8em, 1, 2.6em, 1);
+  margin-bottom: 0.25em;
+  @include responsive-type(2.25em, 1.1, 2.5em, 1.1);
 }
 
 h2 {
   margin-top: 1.5em;
   margin-bottom: 0.833333em;
-  @include responsive-type(2em, 1.08, 1.8em, 1.1, 1.6em, 1.3);
+  @include responsive-type(1.5em, 1.2, 1.8em, 1.2);
 }
 
 h3 {
   margin-top: 1.5em;
   margin-bottom: 0.666667em;
-  @include responsive-type(1.5em, 1.2, 1.5em, 1.2, 1.33em, 1.4);
+  @include responsive-type(1.5em, 1.2, 1.5em, 1.2);
 }
 
 h4 {
   margin-top: 1.5em;
   margin-bottom: 0.666667em;
+  line-height: 1.3;
 }
 
 hr {
@@ -246,7 +249,7 @@ img {
 code:not(pre > code) {
   padding: 2px 4px;
   border-radius: 4px;
-  font-size: 0.85em;
+  font-size: 0.8em;
   color: var(--secondary-foreground);
   font-family: var(--font-mono);
   background-color: var(--secondary-background);
@@ -263,7 +266,7 @@ pre code {
   background-color: var(--muted-background);
   padding: calc(var(--spacing) * 2.5);
   white-space: pre-wrap;
-  font-size: 0.85em;
+  font-size: 0.8em;
   overflow-x: auto;
   text-wrap: nowrap;
 }
