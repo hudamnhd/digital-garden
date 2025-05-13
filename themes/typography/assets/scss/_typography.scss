@@ -1,5 +1,5 @@
 html {
-  @include responsive-type(1.125rem, 1.5, 1.25rem, 1.55);
+  @include responsive-type(1.125rem, 1.4, 1.25rem, 1.5);
   background-color: var(--primary-background);
   color: var(--secondary-foreground);
 }
@@ -13,11 +13,6 @@ html {
   }
 }
 
-h2,
-h3,
-h4,
-h5,
-h6,
 strong,
 b {
   color: var(--primary-foreground);
@@ -25,9 +20,10 @@ b {
 }
 
 h1 {
+  font-weight: 800;
   margin-top: 0;
   margin-bottom: 0.25em;
-  @include responsive-type(2.25em, 1.1, 2.5em, 1.1);
+  @include responsive-type(2.25em, 1.1, 2.6em, 1.1);
 }
 
 h2 {
